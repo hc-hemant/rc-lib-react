@@ -49,9 +49,13 @@
     "vite-plugin-dts": "^4.0.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "npm run test:coverage",
-      "npm run lint"
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{test.ts, test.tsx}": [
+      "npm run test -- --findRelatedTests",
+      "git add"
     ]
   },
   "husky": {
