@@ -68,7 +68,7 @@ describe('UNIT | Table component', () => {
         expect(rows.length).toBe(1);
     });
 
-    it('should show caption if passed', () => {
+    it('should show table caption if passed', () => {
         render(<Table columns={tableColumns} rows={tableRows} caption="Sample table" testId={testId}/>);
         const rows = screen.queryAllByTestId(`${testId}-row`);
         const headers = screen.queryAllByTestId(`${testId}-header`);

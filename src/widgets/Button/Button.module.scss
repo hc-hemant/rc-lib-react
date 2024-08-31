@@ -4,18 +4,18 @@
    border-radius: 4px;
    cursor: pointer;
    font-size: 16px;
-   transition: background-color 0.3s ease;
-   color: $surface-color;
+   transition: var(--background-color) 0.3s ease;
+   color: var(--surface-color);
 
    &:hover {
-    background-color: darken($primary-color, 10%);
+//     background-color: darken(var(--primary-color), 10%);
   }
 
    &-primary{
-        background-color: $primary-color;
+        background-color: var(--primary-color);
    }
 
    &-secondary {
-        background-color: $secondary-color;
+        background-color: var(--secondary-color);
    }
 }

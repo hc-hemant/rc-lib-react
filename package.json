@@ -1,15 +1,20 @@
 {
   "name": "rc-lib-react",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "",
   "type": "module",
+  "main": "dist/rc-lib-react.cjs.js", 
+  "module": "dist/rc-lib-react.es.js",
+  "types": "dist/types/index.d.ts",
+  "style": "dist/style.css",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check-all": "npm run lint && npm run build && npm run test:coverage"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -19,6 +24,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@rollup/plugin-commonjs": "^26.0.1",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
@@ -39,17 +45,25 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-dts": "^4.0.3"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run lint",
-      "npm run test:coverage"
+      "npm run test:coverage",
+      "npm run lint"
     ]
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "keywords": ["react", "component-library", "typescript", "scss"],
+  "author": "Hemant Chaudhary",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hc-hemant/rc-lib-react"
   }
 }

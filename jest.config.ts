@@ -3,7 +3,7 @@ import type { Config } from '@jest/types';
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
     '\\.(css|scss)$': 'jest-transform-stub',
     '^@/(.*)$': '<rootDir>/src/$1',
@@ -13,7 +13,7 @@ const config: Config.InitialOptions = {
     '^.+\\.tsx?$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.app.json' }],
     '^.+\\.scss$': 'jest-transform-stub',
   },
-  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/coverage/'],
   collectCoverage: true,
   coverageReporters: ['text', 'lcov', 'html'],
   coverageThreshold: {
